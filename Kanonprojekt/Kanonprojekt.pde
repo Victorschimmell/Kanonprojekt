@@ -1,5 +1,9 @@
+//Generelle variabler
+int w = 1400; //Width
+int h = 800; //Height
+
 void setup(){
-  size(500,500);
+  size(w,h);
   smooth();
   noStroke();
   rectMode(CENTER);
