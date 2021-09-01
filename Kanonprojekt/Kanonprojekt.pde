@@ -1,5 +1,5 @@
 void setup(){
-  fullScreen();
+  size(500,500);
   smooth();
   noStroke();
   rectMode(CENTER);
