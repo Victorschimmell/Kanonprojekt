@@ -3,12 +3,12 @@ int w = 1400; //Width
 int h = 800; //Height
 
 void setup(){
-  size(w,h);
+  size(1400,800);
   smooth();
   noStroke();
   rectMode(CENTER);
 }
 
 void draw(){
-  background(255,255,255);
+  updateBackground();
 }
