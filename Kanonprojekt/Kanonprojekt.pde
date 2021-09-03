@@ -26,5 +26,6 @@ void draw(){
   if(menu==1){
     drawLevel();
     drawCannon();
+    drawSky();
   }
 }
