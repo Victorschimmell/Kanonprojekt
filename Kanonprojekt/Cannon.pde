@@ -8,6 +8,15 @@ void drawCannon(){
   strokeWeight(1);
   ellipse(210,h-h/12*2+40,100,100);
   
+  fill(#42291A);
+   pushMatrix();
+stroke(0);
+  strokeWeight(0.5);
+   translate(210,h-h/12*2+40);
+  rotate(radians(PI*200));
+  rect(0,0,5,100);
+  popMatrix();
+  
   //Kanon
   fill(#323334);
   
@@ -25,5 +34,31 @@ void drawCannon(){
   strokeWeight(1);
 ellipse(200,h-h/12*2+45,100,100);
 
-  noStroke();  
+ noStroke();  
+//Hjul detajler
+fill(#42291A);
+
+pushMatrix();
+stroke(0);
+  strokeWeight(0.5);
+   translate(200,h-h/12*2+46);
+  rotate(radians(-PI*10));
+  rect(0,0,5,100);
+  popMatrix();
+ 
+ pushMatrix();
+stroke(0);
+  strokeWeight(0.5);
+   translate(200,h-h/12*2+46);
+  rotate(radians(PI*10));
+  rect(0,0,5,100);
+  popMatrix();
+ 
+ pushMatrix();
+stroke(0);
+  strokeWeight(0.5);
+   translate(200,h-h/12*2+46);
+  rotate(radians(PI*200));
+  rect(0,0,5,100);
+  popMatrix();
 }
