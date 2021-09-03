@@ -3,7 +3,7 @@ int t1_w = 80;
 int t1_h = 200;
 
 void drawLevel(){
-  fill(70,70,70);
+  fill(#348C31);
   rect(0,h,w*2,h/2);
  
   fill(245,245,245);
