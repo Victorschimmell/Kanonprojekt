@@ -3,5 +3,5 @@ void drawLevel(){
   rect(0,h,w*2,h/6);
   
   fill(245,245,245);
-  rect(0,h-h/6,80,200);
+  rect(w-w/6,h-h/6,80,200);
 }
