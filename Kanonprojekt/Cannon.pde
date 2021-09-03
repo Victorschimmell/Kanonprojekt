@@ -8,6 +8,7 @@ void drawCannon(){
   strokeWeight(1);
   ellipse(210,h-h/12*2+40,100,100);
   
+  //Hjuldesign til hjul 1
   fill(#42291A);
    pushMatrix();
 stroke(0);
@@ -35,7 +36,8 @@ stroke(0);
 ellipse(200,h-h/12*2+45,100,100);
 
  noStroke();  
-//Hjul detajler
+ 
+//Hjuldesign til hjul 1
 fill(#42291A);
 
 pushMatrix();
