@@ -65,18 +65,35 @@ void mousePressed(){
 
 void updateBackground(){
   // Vores betingelser tjekker, om farven skal blive lysere eller mørkere ved hjælp af vores boolean variabel; bgT
-  if(bgChange == true){ 
-    if(bgColor>140){
-      bgColor = bgColor-0.5;
+  if(menu==0){
+    background(bgColor,bgColor,bgColor);
+    if(bgChange == true){ 
+      if(bgColor>140){
+        bgColor = bgColor-0.5;
+      }else{
+        bgChange = false;
+      }
     }else{
-      bgChange = false;
+      if(bgColor<190){
+        bgColor = bgColor+0.5;
+      }else{
+        bgChange = true;
+      }
     }
-  }else{
-    if(bgColor<190){
-      bgColor = bgColor+0.5;
+  }if(menu==1){
+    background(bgColor,200,250);
+    if(bgChange == true){ 
+      if(bgColor>140){
+        bgColor = bgColor-0.5;
+      }else{
+        bgChange = false;
+      }
     }else{
-      bgChange = true;
+      if(bgColor<180){
+        bgColor = bgColor+0.5;
+      }else{
+        bgChange = true;
+      }
     }
   }
-  background(bgColor,bgColor,bgColor);
 }
