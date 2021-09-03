@@ -6,11 +6,7 @@ void drawCannon(){
   fill(#654321);
   stroke(0);
   strokeWeight(1);
-<<<<<<< Updated upstream
-  ellipse(220,h-h/14*2+40,80,80);
-=======
-ellipse(210,h-h/12*2+30,110,110);
->>>>>>> Stashed changes
+  ellipse(210,h-h/12*2+30,110,110);
   
   //Kanon
   fill(#323334);
@@ -29,9 +25,5 @@ ellipse(210,h-h/12*2+30,110,110);
   strokeWeight(1);
 ellipse(200,h-h/12*2+30,110,110);
 
-<<<<<<< Updated upstream
   noStroke();  
-=======
-  noStroke();
->>>>>>> Stashed changes
 }
