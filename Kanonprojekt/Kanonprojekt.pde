@@ -12,4 +12,5 @@ void setup(){
 void draw(){
   updateBackground();
   drawLevel();
+  drawCanon();
 }
