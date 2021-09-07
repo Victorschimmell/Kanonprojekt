@@ -26,12 +26,12 @@ stroke(0);
   stroke(0);
    translate(100,h-h/12-10);
   rotate(radians(-PI*13));
-  
   //Normalizing af en vektor, 
   PVector mouse = new PVector(mouseX,mouseY);
   mouse.normalize();
   //Efter normalizing, vil dens længde vil altid være ganget 300
   mouse.mult(300);
+  //DrawCannon
   strokeWeight(40);
   line(x,y,mouse.x,mouse.y);
   popMatrix();
