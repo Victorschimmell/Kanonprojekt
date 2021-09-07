@@ -29,6 +29,5 @@ void draw(){
     drawLevel();
     drawCannon();
     drawSky();
-   RotateCannon();
   }
 }
