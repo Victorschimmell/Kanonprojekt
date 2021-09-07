@@ -19,14 +19,21 @@ stroke(0);
   popMatrix();
   
   //Kanon
-  fill(#323334);
-  
+  fill(#323334); 
+
   pushMatrix();
+  //Start definationer
   stroke(0);
   strokeWeight(1);
-   translate(230,h-h/11*2);
-  rotate(radians(-PI*9.5));
-  rect(x,y,300,45);
+   translate(100,h-h/12-10);
+  rotate(radians(-PI*13));
+  
+  //Normalizing af en vektor, 
+  PVector mouse = new PVector(mouseX,mouseY);
+  mouse.normalize();
+  mouse.mult(300);
+  strokeWeight(40);
+  line(x,y,mouse.x,mouse.y);
   popMatrix();
   
   

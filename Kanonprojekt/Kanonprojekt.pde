@@ -12,6 +12,7 @@ int menu = 0;
 float x = 0;
 float y = 0;
 
+
 void setup(){
   size(1400,800);
   smooth();
