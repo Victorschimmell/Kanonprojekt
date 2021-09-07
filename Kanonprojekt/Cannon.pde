@@ -26,8 +26,9 @@ stroke(0);
   strokeWeight(1);
    translate(230,h-h/11*2);
   rotate(radians(-PI*9.5));
-  rect(0,0,300,45);
+  rect(x,y,300,45);
   popMatrix();
+  
   
   //Hjul_2
   fill(#654321);

@@ -8,7 +8,9 @@ int menu = 0;
 //1 = game
 //2 = options
 
-
+//Kanon
+float x = 0;
+float y = 0;
 
 void setup(){
   size(1400,800);
@@ -27,5 +29,6 @@ void draw(){
     drawLevel();
     drawCannon();
     drawSky();
+   RotateCannon();
   }
 }
