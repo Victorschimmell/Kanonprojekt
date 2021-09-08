@@ -9,18 +9,22 @@ int buttonHeight = h/8;
 //Button functions
 void drawButton(String b, int c){
   if(b=="home"){
-    translate(700,400);
+    pushMatrix();
+    translate(50,50);
     noFill();
-    stroke(c);
-    strokeWeight(8);
-    ellipse(0,0,100,100);
+    stroke(0,0,0,c);
+    strokeWeight(5);
+    ellipse(0,0,100*0.7,100*0.7);
     //Hus
     noStroke();
-    fill(c,c,c);
-    rect(-17,15,15,30);
-    rect(17,15,15,30);
-    rect(0,0,49,20);
-    triangle(-35,-5,35,-5,0,-30);
+    fill(0,0,0,c);
+    rectMode(CORNER);
+    rect(-(49*0.7)/2,15*0.7-1.5,15*0.7,20*0.7);
+    rect((49*0.7)/2-15*0.7,15*0.7-1.5,15*0.7,20*0.7);
+    rectMode(CENTER);
+    rect(0,2,49*0.7,20*0.7);
+    triangle(-35*0.7,-5,35*0.7,-5,0,-30*0.7);
+    popMatrix();
   }
 }
 
@@ -72,13 +76,10 @@ void drawUI(){
     text("Play",0,0,buttonWidth-buttonWidth/2,buttonHeight-30);
     popMatrix();
   }else if(menu==1){
-    drawButton("Home",100);
-    if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7 && mouseY<height*3/7+buttonHeight){
-      fill(0,0,0, 70);
-      rect(0,0,50,50,10,10,10,10);
+    if(mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85){
+      drawButton("home",70);
     }else{
-      fill(0,0,0, 40);
-      rect(0,0,buttonWidth,buttonHeight,10,10,10,10);
+      drawButton("home",40);
     }
   }
 }
@@ -86,13 +87,16 @@ void drawUI(){
 //Buttons UI
 void mousePressed(){
   if(menu==0){
-    translate(w/2,h/2);
     if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7 && mouseY<height*3/7+buttonHeight){
       menu = 1;
     }else if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7+buttonHeight+buttonHeight/6 && mouseY<height*3/7+buttonHeight/6+2*buttonHeight){
       menu = 2;
     }else if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7+buttonHeight/6+2*buttonHeight+buttonHeight/6 && mouseY<height*3/7+buttonHeight/6+buttonHeight*3+buttonHeight/6){
       exit();
+    }
+  }else if(menu==1){
+    if(mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85){
+      menu = 0;
     }
   }
 }
