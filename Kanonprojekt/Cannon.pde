@@ -41,7 +41,7 @@ stroke(0);
   
   mouse.normalize();
   //Efter normalizing, vil dens længde vil altid være ganget 300
-  mouse.mult(300);
+  mouse.mult(290);
   //DrawCannon
   strokeWeight(40);
   line(x,y,mouse.x,mouse.y);
