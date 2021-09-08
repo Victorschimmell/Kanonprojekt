@@ -23,9 +23,7 @@ void setup(){
 
 void draw(){
   updateBackground();
-  if(menu==0){
-    drawUI();
-  }
+  drawUI();
   if(menu==1){
     drawLevel();
     drawCannon();

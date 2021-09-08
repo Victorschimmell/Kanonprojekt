@@ -6,9 +6,34 @@ boolean bgChange = true;
 int buttonWidth = w/5;
 int buttonHeight = h/8;
 
+//Button functions
+void drawButton(String b, int c){
+  if(b=="home"){
+    translate(700,400);
+    noFill();
+    stroke(c);
+    strokeWeight(8);
+    ellipse(0,0,100,100);
+    //Hus
+    noStroke();
+    fill(c,c,c);
+    rect(-17,15,15,30);
+    rect(17,15,15,30);
+    rect(0,0,49,20);
+    triangle(-35,-5,35,-5,0,-30);
+  }
+}
+
+
 //UI & Menu
 void drawUI(){
   if(menu==0){ //Main menu
+    textSize(75);
+    fill(80,80,80);
+    textAlign(CENTER);
+    text("Kanonprojekt",width/2,height*1/5);
+    textSize(30);
+    text("Edward, Nicklas, Peter & Victor S",width/2,height*1/5+height*1/12);
     //Draw buttons
     pushMatrix();
     translate(w/2,h/2);
@@ -16,27 +41,27 @@ void drawUI(){
     //button_1
     if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7 && mouseY<height*3/7+buttonHeight){
       fill(0,0,0, 70);
-      rect(0,0,buttonWidth,buttonHeight);
+      rect(0,0,buttonWidth,buttonHeight,10,10,10,10);
     }else{
       fill(0,0,0, 40);
-      rect(0,0,buttonWidth,buttonHeight);
+      rect(0,0,buttonWidth,buttonHeight,10,10,10,10);
     }
     //button_2
     if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7+buttonHeight+buttonHeight/6 && mouseY<height*3/7+buttonHeight/6+2*buttonHeight){
       fill(0,0,0, 70);
-      rect(0,buttonHeight+buttonHeight/6,buttonWidth,buttonHeight);
+      rect(0,buttonHeight+buttonHeight/6,buttonWidth,buttonHeight,10,10,10,10);
     }else{
       fill(0,0,0, 40);
-      rect(0,buttonHeight+buttonHeight/6,buttonWidth,buttonHeight);
+      rect(0,buttonHeight+buttonHeight/6,buttonWidth,buttonHeight,10,10,10,10);
     }
     
     //button_3
     if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7+buttonHeight/6+2*buttonHeight+buttonHeight/6 && mouseY<height*3/7+buttonHeight/6+buttonHeight*3+buttonHeight/6){
       fill(0,0,0, 70);
-      rect(0,(buttonHeight+buttonHeight/6)*2,buttonWidth,buttonHeight);
+      rect(0,(buttonHeight+buttonHeight/6)*2,buttonWidth,buttonHeight,10,10,10,10);
     }else{
       fill(0,0,0, 40);
-      rect(0,(buttonHeight+buttonHeight/6)*2,buttonWidth,buttonHeight);
+      rect(0,(buttonHeight+buttonHeight/6)*2,buttonWidth,buttonHeight,10,10,10,10);
     }
     
     //button_text
@@ -46,6 +71,15 @@ void drawUI(){
     text("Exit game",0,(buttonHeight+buttonHeight/6)*2,buttonWidth,buttonHeight-30);
     text("Play",0,0,buttonWidth-buttonWidth/2,buttonHeight-30);
     popMatrix();
+  }else if(menu==1){
+    drawButton("Home",100);
+    if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7 && mouseY<height*3/7+buttonHeight){
+      fill(0,0,0, 70);
+      rect(0,0,50,50,10,10,10,10);
+    }else{
+      fill(0,0,0, 40);
+      rect(0,0,buttonWidth,buttonHeight,10,10,10,10);
+    }
   }
 }
 
