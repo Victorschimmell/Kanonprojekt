@@ -28,17 +28,23 @@ stroke(0);
   rotate(radians(-PI*26));
   //Normalizing af en vektor, 
   PVector mouse = new PVector('x',mouseY);
+
+    //maksimerer parameterne for længden i y-aksen af vektoren i den matrix [x,y]
+  if(mouseY <= height/7){
+     mouse.y = height/7;
+  }
+  //Det samme bare i x-aksen
+  if(mouseY >= height-100){
+     mouse.y = height-100;
+  }
+  
+  
   mouse.normalize();
   //Efter normalizing, vil dens længde vil altid være ganget 300
   mouse.mult(300);
   //DrawCannon
   strokeWeight(40);
   line(x,y,mouse.x,mouse.y);
-  
-  if(mouseY <= 30){
-  //Her skal kanonen nå sit max y.
-  }
-  
   popMatrix();
 
   
