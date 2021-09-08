@@ -25,10 +25,16 @@ int t1_w = 80;
 int t1_h = 200;
 
 void drawLevel(){
-  noStroke();
-  fill(#348C31);
-  rect(0,h,w*2,h/2);
- 
+  
+  
+
+  //Græs 
+ //Sætter image og dens position
+ image(img,0,height-130);
+  image(img,width/2,height-130);
+  
+  stroke(150);
+ strokeWeight(0.5);
   fill(245,245,245);
-  rect(w-w/6,h-t1_h+h/24,t1_w,t1_h);
+  rect(w-w/6,h-t1_h-10,t1_w,t1_h);
 }

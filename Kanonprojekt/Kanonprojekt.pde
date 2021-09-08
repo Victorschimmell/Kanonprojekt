@@ -12,13 +12,21 @@ int menu = 0;
 float x = 0;
 float y = 0;
 
+//Image
+PImage img;
+
 
 void setup(){
   size(1400,800);
   smooth();
+  frameRate(60);
   noStroke();
   rectMode(CENTER);
   textAlign(CENTER);
+  
+  //Loader image
+  img = loadImage("Grass.jpg");
+  
 }
 
 void draw(){

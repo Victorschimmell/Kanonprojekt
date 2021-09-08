@@ -6,14 +6,14 @@ void drawCannon(){
   fill(#654321);
   stroke(0);
   strokeWeight(1);
-  ellipse(210,h-h/12*2+40,100,100);
+  ellipse(190,h-h/12*2-20,100,100);
   
   //Hjuldesign til hjul 1
   fill(#42291A);
    pushMatrix();
 stroke(0);
   strokeWeight(0.5);
-   translate(210,h-h/12*2+40);
+   translate(190,h-h/12*2-20);
   rotate(radians(PI*200));
   rect(0,0,5,100);
   popMatrix();
@@ -24,7 +24,7 @@ stroke(0);
   pushMatrix();
   //Start definationer
   stroke(0);
-   translate(100,h-h/12-10);
+   translate(90,h-h/12-70);
   rotate(radians(-PI*26));
   //Normalizing af en vektor, 
   PVector mouse = new PVector('x',mouseY);
@@ -37,8 +37,7 @@ stroke(0);
   if(mouseY >= height-100){
      mouse.y = height-100;
   }
-  
-  
+  //Normalizer vektoren
   mouse.normalize();
   //Efter normalizing, vil dens længde vil altid være ganget 300
   mouse.mult(290);
@@ -52,7 +51,7 @@ stroke(0);
   fill(#654321);
   stroke(0);
   strokeWeight(1);
-ellipse(200,h-h/12*2+45,100,100);
+ellipse(180,h-h/12*2+5-20,100,100);
 
  noStroke();  
  
@@ -62,7 +61,7 @@ fill(#42291A);
 pushMatrix();
 stroke(0);
   strokeWeight(0.5);
-   translate(200,h-h/12*2+46);
+   translate(180,h-h/12*2+6-20);
   rotate(radians(-PI*10));
   rect(0,0,5,100);
   popMatrix();
@@ -70,7 +69,7 @@ stroke(0);
  pushMatrix();
 stroke(0);
   strokeWeight(0.5);
-   translate(200,h-h/12*2+46);
+   translate(180,h-h/12*2+6-20);
   rotate(radians(PI*10));
   rect(0,0,5,100);
   popMatrix();
@@ -78,7 +77,7 @@ stroke(0);
  pushMatrix();
 stroke(0);
   strokeWeight(0.5);
-   translate(200,h-h/12*2+46);
+   translate(180,h-h/12*2+6-20);
   rotate(radians(PI*200));
   rect(0,0,5,100);
   popMatrix();
