@@ -35,6 +35,7 @@ void drawUI() {
     noStroke();
     textSize(75);
     fill(80, 80, 80);
+    rectMode(CENTER);
     textAlign(CENTER);
     text("Kanonprojekt", width/2, height*1/5);
     textSize(30);

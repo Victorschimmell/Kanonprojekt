@@ -29,8 +29,7 @@ void setup() {
   smooth();
   frameRate(60);
   noStroke();
-  rectMode(CENTER);
-  textAlign(CENTER);
+
 
   //standard array setup
   player = new Player();
