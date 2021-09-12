@@ -32,6 +32,7 @@ void drawButton(String b, int c) {
 //UI & scene
 void drawUI() {
   if (scene==0) { //Main menu
+    noStroke();
     textSize(75);
     fill(80, 80, 80);
     textAlign(CENTER);
