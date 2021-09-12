@@ -1,5 +1,4 @@
-//HEJSA
-class Bullet {
+class subBullet {
   //standard PVector used for the location of the bullet
   PVector location;
 
@@ -7,7 +6,7 @@ class Bullet {
   PVector gravity;
   //vars used to check the angle between location and the mouse
   float  speed, rotation;
-  Bullet( float angle) {
+  subBullet( float angle) {
     //places the bullet in the middle of the room
     //bullet speed
     speed = 30;//change this number to change the speed
@@ -21,20 +20,19 @@ class Bullet {
 
 
   void update() {
-    
 
     velocity.add(gravity);
     location.add(velocity);
 
 
-    fill(255);
-    ellipse(location.x, location.y, 40, 40);
+    fill(1, 50);
+    ellipse(location.x, location.y, 10, 10);
 
     //removes the bullet from the arrayList if it is off the room
     if (location.x < 0 || location.x > width || location.y < 0 || location.y > height) {
 
-      bullets.remove(i);
+      subBullets.remove(i);
     } 
-    println("bullets = " +bullets.size()); //debug for at sikre at vores bullets blev removed korrekt
+     println("subBullets = " +subBullets.size()); //debug for at sikre at vores bullets blev removed korrekt
   }
 }

@@ -1,87 +1,96 @@
-void drawCannon() {
+class Player {
+  PVector location, mouse;
 
-  //Bare en gammel hjul fra en vikingtanks
+  Player() {
 
-  //Hjul_1
-  fill(#654321);
-  stroke(0);
-  strokeWeight(1);
-  ellipse(190, h-h/12*2-20, 100, 100);
+    location = new PVector(20, height-height/12*2-20);
+  } 
+  void update() {
 
-  //Hjuldesign til hjul 1
-  fill(#42291A);
-  pushMatrix();
-  stroke(0);
-  strokeWeight(0.5);
-  translate(190, h-h/12*2-20);
-  rotate(radians(PI*200));
-  rect(0, 0, 5, 100);
-  popMatrix();
 
-  //Kanon
-  fill(#323334); 
+    if (canShootCounter >= frameRate/12) {
+      subBullets.add( new subBullet(angle));
+      canShootCounter = 0;
+    } else {
+      canShootCounter+=1;
+    }
 
-  pushMatrix();
-  //Start definationer
-  stroke(0);
-  translate(90, h-h/12-70);
-  rotate(radians(-PI*26));
-  //Normalizing af en vektor, 
-  PVector mouse = new PVector('x', mouseY);
+    if (mousePressed && canShoot) {
+      // this regulates the shooting speed
+      //move the bullet
 
-  //maksimerer parameterne for længden i y-aksen af vektoren i den matrix [x,y]
-  if (mouseY <= height/7) {
-    mouse.y = height/7;
+      bullets.add( new Bullet(angle));
+      canShoot = false;
+    } else if (!mousePressed) {
+
+      canShoot = true;
+    }
   }
-  //Det samme bare i x-aksen
-  if (mouseY >= height-100) {
-    mouse.y = height-100;
+
+
+  void drawCannon() {
+
+    //Edwards kode her
+
+    int num = 1;
+    strokes(1);
+    switch(num) {
+    case 1:
+      pushMatrix();
+      translate(location.x, location.y);
+      //Hjul_2
+      fill(#654321);
+      ellipse(0+10, 0, 100, 100);
+
+      //Hjuldesign til hjul 2
+      fill(#42291A);
+      rect(0+10, 0, 50, 5);
+
+    case 2:
+      // Her beskrives kanonen
+
+      fill(#323334); 
+      mouse = new PVector(mouseX, mouseY);
+
+      mouse.sub(location);
+      mouse.normalize();
+
+      mouse.mult(150);
+
+      strokeWeight(40);
+      strokeCap(SQUARE);
+      line(0, 0, mouse.x, mouse.y);
+
+      strokeCap(ROUND);
+      strokeWeight(1);
+
+    case 3: 
+      //Hjul 1
+      fill(#654321);
+      ellipse(0, 0, 100, 100);
+
+      //Hjuldesign til hjul 1 
+      fill(#42291A);
+      rectMode(CENTER);
+
+      pushMatrix();
+      rotate(radians(-PI*10));
+      rect(0, 0, 5, 100);
+      popMatrix();
+
+    case 4:
+      pushMatrix();
+      rotate(radians(PI*10));
+      rect(0, 0, 5, 100);
+      popMatrix();
+
+    case 5:
+      pushMatrix();
+      rotate(radians(PI*200));
+      rect(0, 0, 5, 100);
+      popMatrix();
+    }
+    rectMode(CORNER);
+    popMatrix();
   }
-  //Normalizer vektoren
-  mouse.normalize();
-  //Efter normalizing, vil dens længde vil altid være ganget 300
-  mouse.mult(290);
-
-  //DrawCannon
-  strokeWeight(40);
-  //Her gives objektet "line" en rect-lignende strokeCap i stedet for de runde ender
-  strokeCap(PROJECT-5);
-  line(x, y, mouse.x, mouse.y);
-  popMatrix();
-
-
-  //Hjul_2
-  fill(#654321);
-  stroke(0);
-  strokeWeight(1);
-  ellipse(180, h-h/12*2+5-20, 100, 100);
-
-  noStroke();  
-
-  //Hjuldesign til hjul 1
-  fill(#42291A);
-
-  pushMatrix();
-  stroke(0);
-  strokeWeight(0.5);
-  translate(180, h-h/12*2+6-20);
-  rotate(radians(-PI*10));
-  rect(0, 0, 5, 100);
-  popMatrix();
-
-  pushMatrix();
-  stroke(0);
-  strokeWeight(0.5);
-  translate(180, h-h/12*2+6-20);
-  rotate(radians(PI*10));
-  rect(0, 0, 5, 100);
-  popMatrix();
-
-  pushMatrix();
-  stroke(0);
-  strokeWeight(0.5);
-  translate(180, h-h/12*2+6-20);
-  rotate(radians(PI*200));
-  rect(0, 0, 5, 100);
-  popMatrix();
 }

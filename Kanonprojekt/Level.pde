@@ -29,6 +29,7 @@ void drawLevel() {
 
   drawSky();
 
+  angle= atan2(mouseY- player.location.y, mouseX- player.location.x); //finder vores angle
   //Græs 
   //Sætter image og dens position
   image(img, 0, height-130);
@@ -39,5 +40,7 @@ void drawLevel() {
   fill(245, 245, 245);
   rect(w-w/6, h-t1_h-10, t1_w, t1_h);
 
-  drawCannon();
+  player.update(); //Shoot
+  update();
+  player.drawCannon();
 }
