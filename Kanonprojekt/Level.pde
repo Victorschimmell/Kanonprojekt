@@ -27,7 +27,7 @@ int t1_h = 200;
 
 void drawLevel(){
   
-  
+  drawSky();
 
   //Græs 
  //Sætter image og dens position
@@ -38,4 +38,9 @@ void drawLevel(){
  strokeWeight(0.5);
   fill(245,245,245);
   rect(w-w/6,h-t1_h-10,t1_w,t1_h);
+  
+  drawCannon();
+  
+  
+  
 }

@@ -2,9 +2,9 @@
 int w = 1400; //Width
 int h = 800; //Height
 
-//Menu
-int menu = 0;
-//0 = main
+//Scene
+int scene = 0;
+//0 = Menu
 //1 = game
 //2 = options
 
@@ -31,10 +31,12 @@ void setup(){
 
 void draw(){
   updateBackground();
+  
   drawUI();
-  if(menu==1){
-    drawLevel();
-    drawCannon();
-    drawSky();
+  
+  if(scene==1) drawLevel();{
+    
+    
+
   }
 }

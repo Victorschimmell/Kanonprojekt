@@ -2,7 +2,7 @@
 float bgColor = 190;
 boolean bgChange = true;
 
-//Menu
+//scene
 int buttonWidth = w/5;
 int buttonHeight = h/8;
 
@@ -29,9 +29,9 @@ void drawButton(String b, int c){
 }
 
 
-//UI & Menu
+//UI & scene
 void drawUI(){
-  if(menu==0){ //Main menu
+  if(scene==0){ //Main scene
     textSize(75);
     fill(80,80,80);
     textAlign(CENTER);
@@ -75,7 +75,7 @@ void drawUI(){
     text("Exit game",0,(buttonHeight+buttonHeight/6)*2,buttonWidth,buttonHeight-30);
     text("Play",0,0,buttonWidth-buttonWidth/2,buttonHeight-30);
     popMatrix();
-  }else if(menu==1){
+  }else if(scene==1){
     if(mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85){
       drawButton("home",70);
     }else{
@@ -86,24 +86,24 @@ void drawUI(){
 
 //Buttons UI
 void mousePressed(){
-  if(menu==0){
+  if(scene==0){
     if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7 && mouseY<height*3/7+buttonHeight){
-      menu = 1;
+      scene = 1;
     }else if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7+buttonHeight+buttonHeight/6 && mouseY<height*3/7+buttonHeight/6+2*buttonHeight){
-      menu = 2;
+      scene = 2;
     }else if(mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7+buttonHeight/6+2*buttonHeight+buttonHeight/6 && mouseY<height*3/7+buttonHeight/6+buttonHeight*3+buttonHeight/6){
       exit();
     }
-  }else if(menu==1){
+  }else if(scene==1){
     if(mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85){
-      menu = 0;
+      scene = 0;
     }
   }
 }
 
 void updateBackground(){
   // Vores betingelser tjekker, om farven skal blive lysere eller mørkere ved hjælp af vores boolean variabel; bgT
-  if(menu==0){
+  if(scene==0){
     background(bgColor,bgColor,bgColor);
     if(bgChange == true){ 
       if(bgColor>140){
@@ -118,7 +118,7 @@ void updateBackground(){
         bgChange = true;
       }
     }
-  }if(menu==1){
+  }if(scene==1){
     background(bgColor,200,250);
     if(bgChange == true){ 
       if(bgColor>140){
