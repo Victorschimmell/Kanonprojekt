@@ -33,7 +33,7 @@ class Player {
     //Edwards kode her
 
     int num = 1;
-    strokes(1);
+    stroke(1);
     switch(num) {
     case 1:
       pushMatrix();
