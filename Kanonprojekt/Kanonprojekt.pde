@@ -16,27 +16,22 @@ float y = 0;
 PImage img;
 
 
-void setup(){
-  size(1400,800);
+void setup() {
+  size(1400, 800);
   smooth();
   frameRate(60);
   noStroke();
   rectMode(CENTER);
   textAlign(CENTER);
-  
+
   //Loader image
   img = loadImage("Grass.jpg");
-  
 }
 
-void draw(){
+void draw() {
   updateBackground();
-  
-  drawUI();
-  
-  if(scene==1) drawLevel();{
-    
-    
 
-  }
+  drawUI();
+
+  if (scene==1) drawLevel();
 }
