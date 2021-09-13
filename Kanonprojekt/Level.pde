@@ -33,10 +33,15 @@ void drawLevel() {
   img.resize(width/2, 0);
   image(img, 0, height-130);
   image(img, width/2, height-130);
+  
 
 
   enemy.drawEnemy(); 
   player.update(); //Shoot
   update();
   player.drawCannon(); 
+  fill(1);
+  textSize(12);
+  text("Bullseye: " +enemy.hitCounter, enemy.location.x, enemy.location.y-enemy.r*2);
+  text("Misses: " + int(shotstaken-enemy.hitCounter), enemy.location.x, enemy.location.y-enemy.r);
 }

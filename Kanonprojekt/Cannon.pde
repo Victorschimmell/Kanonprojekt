@@ -1,8 +1,10 @@
 class Player {
   PVector location, mouse;
 
-  Player() {
+ 
 
+  Player() {
+  
     location = new PVector(20, height-height/12*2-20);
   } 
   void update() {
@@ -15,10 +17,10 @@ class Player {
       canShootCounter+=1;
     }
 
-    if (mousePressed && canShoot) {
+    if (mousePressed && canShoot && scene ==1) {
       // this regulates the shooting speed
       //move the bullet
-
+      shotstaken++;
       bullets.add( new Bullet(angle));
       canShoot = false;
     } else if (!mousePressed) {

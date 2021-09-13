@@ -3,7 +3,7 @@ int w = 1400; //Width
 int h=800; //Height
 
 //Scene
-int scene = 0, i;
+int scene = 0, i, shotstaken = 0;;
 //0 = Menu
 //1 = game
 //2 = options
@@ -13,7 +13,7 @@ Player player = new Player();
 Enemy enemy = new Enemy();
 
 //Vars to regulate shooting speed
-boolean canShoot = true;
+boolean canShoot = false;
 float canShootCounter = 0;
 float angle; //rotation of shot
 

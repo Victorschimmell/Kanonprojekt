@@ -37,7 +37,7 @@ void drawUI() {
     fill(80, 80, 80);
     rectMode(CENTER);
     textAlign(CENTER);
-    text("Kanonprojekt", width/2, height*1/5);
+    text("Kanonprojekt / TargetPractice", width/2, height*1/5);
     textSize(30);
     text("Edward, Nicklas, Peter & Victor S", width/2, height*1/5+height*1/12);
     //Draw buttons
