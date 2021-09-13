@@ -42,6 +42,6 @@ void drawLevel() {
   player.drawCannon(); 
   fill(1);
   textSize(12);
-  text("Bullseye: " +enemy.hitCounter, enemy.location.x, enemy.location.y-enemy.r*2);
-  text("Misses: " + int(shotstaken-enemy.hitCounter), enemy.location.x, enemy.location.y-enemy.r);
+  text("Bullseye: " +enemy.hitCounter, player.location.x+enemy.r*2, player.location.y-enemy.r*4);
+  text("Misses: " + int(shotstaken-enemy.hitCounter), player.location.x+enemy.r*2, player.location.y-enemy.r*3);
 }
