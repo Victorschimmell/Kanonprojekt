@@ -18,6 +18,8 @@ class Enemy {
   void drawEnemy() {
 
     if ( !dead) {
+      stroke(1);
+      strokeWeight(1);
       fill(255, 0, 0);
       ellipse(location.x, location.y, r, r);
 

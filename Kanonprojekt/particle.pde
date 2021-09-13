@@ -92,7 +92,7 @@ class Particle { //tegner particler
   void reset() {
     dx = random(-2.0, 2.0);   // Disse værdier kan ændres for at få forskellige former for eksplosioner
     dy = random(-2.0, 2.0);   
-    r = random(10, 10.0);   
+    r = random(4, 10);   
     dr = random(-0.5, 0.0);   
     visible = true;
   }

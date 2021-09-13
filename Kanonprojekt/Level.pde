@@ -30,6 +30,7 @@ void drawLevel() {
   angle= atan2(mouseY- player.location.y, mouseX- player.location.x); //finder vores angle
   //Græs 
   //Sætter image og dens position
+  img.resize(width/2, 0);
   image(img, 0, height-130);
   image(img, width/2, height-130);
 

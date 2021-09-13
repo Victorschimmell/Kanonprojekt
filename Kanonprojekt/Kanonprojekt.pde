@@ -1,6 +1,6 @@
 //Generelle variabler
 int w = 1400; //Width
-int h = 800; //Height
+int h=800; //Height
 
 //Scene
 int scene = 0, i;
@@ -28,7 +28,7 @@ PImage img;
 
 
 void setup() {
-  size(1400, 800);
+  size(1400, 800, P2D);
   smooth();
   frameRate(60);
   noStroke();
@@ -40,6 +40,8 @@ void setup() {
   bullets = new ArrayList<Bullet>();
   subBullets = new ArrayList<subBullet>();
   systems = new ArrayList<ParticleSystem>();
+  
+
 
   //Loader image
   img = loadImage("Grass.jpg");

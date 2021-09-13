@@ -23,11 +23,11 @@ class subBullet {
 
     stroke(255);
     strokeWeight(5);
-    
+
     velocity.add(gravity);
-    
+
     line(location.x, location.y, location.x+velocity.x, location.y+velocity.y);
-    
+
     location.add(velocity);
     strokeWeight(1);
 
@@ -36,6 +36,6 @@ class subBullet {
 
       subBullets.remove(i);
     } 
-     println("subBullets = " +subBullets.size()); //debug for at sikre at vores bullets blev removed korrekt
+    println("subBullets = " +subBullets.size()); //debug for at sikre at vores bullets blev removed korrekt
   }
 }
