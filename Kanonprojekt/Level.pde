@@ -22,8 +22,6 @@ void drawSky() {
 }
 
 //Level 1
-int t1_w = 80;
-int t1_h = 200;
 
 void drawLevel() {
 
@@ -35,12 +33,9 @@ void drawLevel() {
   image(img, 0, height-130);
   image(img, width/2, height-130);
 
-  stroke(150);
-  strokeWeight(0.5);
-  fill(245, 245, 245);
-  rect(w-w/6, h-t1_h-10, t1_w, t1_h);
 
+  enemy.drawEnemy(); 
   player.update(); //Shoot
   update();
-  player.drawCannon();
+  player.drawCannon(); 
 }

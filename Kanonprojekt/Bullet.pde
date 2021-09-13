@@ -6,7 +6,7 @@ class Bullet {
   PVector velocity;  
   PVector gravity;
   //vars used to check the angle between location and the mouse
-  float  speed, rotation;
+  float  speed, rotation, r;
   Bullet( float angle) {
     //places the bullet in the middle of the room
     //bullet speed
@@ -17,21 +17,24 @@ class Bullet {
     gravity = new PVector(0, 0.5);
 
     location= new PVector(player.location.x, player.location.y);
+    
+    r = 20;
   } 
 
 
   void update() {
-    
+
 
     velocity.add(gravity);
     location.add(velocity);
 
-
-    fill(255);
-    ellipse(location.x, location.y, 40, 40);
+    stroke(1);
+    strokeWeight(1);
+    fill(1);
+    ellipse(location.x, location.y, r, r);
 
     //removes the bullet from the arrayList if it is off the room
-    if (location.x < 0 || location.x > width || location.y < 0 || location.y > height) {
+    if (location.x < 0 || location.x > width  || location.y > height) {
 
       bullets.remove(i);
     } 

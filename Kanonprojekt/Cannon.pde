@@ -8,7 +8,7 @@ class Player {
   void update() {
 
 
-    if (canShootCounter >= frameRate/12) {
+    if (canShootCounter >= frameRate/frameRate) {
       subBullets.add( new subBullet(angle));
       canShootCounter = 0;
     } else {

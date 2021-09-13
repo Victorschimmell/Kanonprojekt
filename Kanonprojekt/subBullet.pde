@@ -21,15 +21,18 @@ class subBullet {
 
   void update() {
 
+    stroke(255);
+    strokeWeight(5);
+    
     velocity.add(gravity);
+    
+    line(location.x, location.y, location.x+velocity.x, location.y+velocity.y);
+    
     location.add(velocity);
-
-
-    fill(1, 50);
-    ellipse(location.x, location.y, 10, 10);
+    strokeWeight(1);
 
     //removes the bullet from the arrayList if it is off the room
-    if (location.x < 0 || location.x > width || location.y < 0 || location.y > height) {
+    if (location.x < 0 || location.x > width  || location.y > height) {
 
       subBullets.remove(i);
     } 
