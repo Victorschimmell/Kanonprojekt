@@ -8,7 +8,7 @@ int buttonHeight = h/8;
 
 //Button functions
 void drawButton(String b, int c) {
-  if (b=="home") {
+  if (scene==1 || scene==2) {
     pushMatrix();
     translate(50, 50);
     noFill();
@@ -83,6 +83,13 @@ void drawUI() {
     } else {
       drawButton("home", 40);
     }
+  }else if(scene==2){
+    drawOptions();
+    if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
+      drawButton("home", 70);
+    } else {
+      drawButton("home", 40);
+    }
   }
 }
 
@@ -96,7 +103,7 @@ void mousePressed() {
     } else if (mouseX>width/2-buttonWidth/2 && mouseX<width/2+buttonWidth/2 && mouseY>height*3/7+buttonHeight/6+2*buttonHeight+buttonHeight/6 && mouseY<height*3/7+buttonHeight/6+buttonHeight*3+buttonHeight/6) {
       exit();
     }
-  } else if (scene==1) {
+  } else if (scene==1 || scene==2) {
     if (mouseX>15 && mouseY>15 && mouseX<85 && mouseY<85) {
       scene = 0;
     }
@@ -105,7 +112,7 @@ void mousePressed() {
 
 void updateBackground() {
   // Vores betingelser tjekker, om farven skal blive lysere eller mørkere ved hjælp af vores boolean variabel; bgT
-  if (scene==0) {
+  if (scene==0 || scene==2) {
     background(bgColor, bgColor, bgColor);
     if (bgChange == true) { 
       if (bgColor>140) {
